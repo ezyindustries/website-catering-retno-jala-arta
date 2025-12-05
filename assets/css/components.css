@@ -1,0 +1,615 @@
+/* ==========================================================================
+   Components - Buttons, Cards, Forms, etc.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Typography Components
+   -------------------------------------------------------------------------- */
+.heading-1 {
+  font-family: var(--font-heading);
+  font-size: var(--text-5xl);
+  font-weight: var(--font-bold);
+  line-height: var(--leading-tight);
+  color: var(--color-brown-dark);
+}
+
+.heading-2 {
+  font-family: var(--font-heading);
+  font-size: var(--text-4xl);
+  font-weight: var(--font-semibold);
+  line-height: var(--leading-tight);
+  color: var(--color-brown-dark);
+}
+
+.heading-3 {
+  font-family: var(--font-heading);
+  font-size: var(--text-3xl);
+  font-weight: var(--font-semibold);
+  line-height: var(--leading-snug);
+  color: var(--color-brown-dark);
+}
+
+.heading-4 {
+  font-family: var(--font-heading);
+  font-size: var(--text-2xl);
+  font-weight: var(--font-semibold);
+  line-height: var(--leading-snug);
+  color: var(--color-brown-dark);
+}
+
+.subtitle {
+  font-family: var(--font-body);
+  font-size: var(--text-xl);
+  line-height: var(--leading-relaxed);
+  color: var(--color-gray-medium);
+}
+
+.section-label {
+  font-family: var(--font-accent);
+  font-size: var(--text-sm);
+  font-weight: var(--font-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-gold);
+}
+
+/* Light variants for dark backgrounds */
+.heading-1--light,
+.heading-2--light,
+.heading-3--light,
+.heading-4--light {
+  color: var(--color-cream);
+}
+
+.subtitle--light {
+  color: var(--color-cream-dark);
+}
+
+/* --------------------------------------------------------------------------
+   Buttons
+   -------------------------------------------------------------------------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: var(--space-4) var(--space-8);
+  font-family: var(--font-accent);
+  font-size: var(--text-base);
+  font-weight: var(--font-semibold);
+  text-decoration: none;
+  border-radius: var(--border-radius-md);
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  white-space: nowrap;
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 2px;
+}
+
+/* Primary Button - Gold */
+.btn--primary {
+  background-color: var(--color-gold);
+  color: var(--color-brown-dark);
+  border-color: var(--color-gold);
+}
+
+.btn--primary:hover {
+  background-color: var(--color-gold-dark);
+  border-color: var(--color-gold-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Secondary Button - Outline */
+.btn--secondary {
+  background-color: transparent;
+  color: var(--color-brown-dark);
+  border-color: var(--color-brown-dark);
+}
+
+.btn--secondary:hover {
+  background-color: var(--color-brown-dark);
+  color: var(--color-cream);
+}
+
+/* Light variant for dark backgrounds */
+.btn--light {
+  background-color: transparent;
+  color: var(--color-cream);
+  border-color: var(--color-cream);
+}
+
+.btn--light:hover {
+  background-color: var(--color-cream);
+  color: var(--color-brown-dark);
+}
+
+/* WhatsApp Button */
+.btn--whatsapp {
+  background-color: var(--color-whatsapp);
+  color: var(--color-white);
+  border-color: var(--color-whatsapp);
+}
+
+.btn--whatsapp:hover {
+  background-color: var(--color-whatsapp-dark);
+  border-color: var(--color-whatsapp-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Button Sizes */
+.btn--sm {
+  padding: var(--space-2) var(--space-4);
+  font-size: var(--text-sm);
+}
+
+.btn--lg {
+  padding: var(--space-5) var(--space-10);
+  font-size: var(--text-lg);
+}
+
+/* Button Icon */
+.btn__icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.btn__icon svg {
+  width: 100%;
+  height: 100%;
+  fill: currentColor;
+}
+
+/* --------------------------------------------------------------------------
+   Cards
+   -------------------------------------------------------------------------- */
+.card {
+  background-color: var(--color-white);
+  border-radius: var(--border-radius-lg);
+  padding: var(--space-8);
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-base);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-xl);
+}
+
+.card--bordered {
+  border: 1px solid var(--color-cream-dark);
+  box-shadow: none;
+}
+
+.card--bordered:hover {
+  border-color: var(--color-gold);
+}
+
+/* Service Card */
+.service-card {
+  background-color: var(--color-white);
+  border-radius: var(--border-radius-lg);
+  padding: var(--space-8);
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-base);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-xl);
+}
+
+.service-card__icon {
+  width: 64px;
+  height: 64px;
+  background-color: var(--color-cream);
+  border-radius: var(--border-radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--space-6);
+}
+
+.service-card__icon svg {
+  width: 32px;
+  height: 32px;
+  fill: var(--color-gold);
+}
+
+.service-card__title {
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
+  font-weight: var(--font-semibold);
+  margin-bottom: var(--space-3);
+  color: var(--color-brown-dark);
+}
+
+.service-card__description {
+  color: var(--color-gray-medium);
+  margin-bottom: var(--space-6);
+  flex-grow: 1;
+}
+
+.service-card__features {
+  margin-bottom: var(--space-6);
+}
+
+.service-card__features li {
+  position: relative;
+  padding-left: var(--space-6);
+  margin-bottom: var(--space-2);
+  color: var(--color-text-primary);
+  font-size: var(--text-sm);
+}
+
+.service-card__features li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.5em;
+  width: 8px;
+  height: 8px;
+  background-color: var(--color-gold);
+  border-radius: 50%;
+}
+
+/* Value Card */
+.value-card {
+  text-align: center;
+  padding: var(--space-8);
+}
+
+.value-card__icon {
+  width: 80px;
+  height: 80px;
+  background-color: var(--color-cream);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto var(--space-6);
+  border: 2px solid var(--color-gold);
+}
+
+.value-card__icon svg {
+  width: 40px;
+  height: 40px;
+  fill: var(--color-gold);
+}
+
+.value-card__title {
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
+  font-weight: var(--font-semibold);
+  margin-bottom: var(--space-3);
+  color: var(--color-brown-dark);
+}
+
+.value-card__description {
+  color: var(--color-gray-medium);
+  font-size: var(--text-base);
+}
+
+/* Menu Card */
+.menu-card {
+  background-color: var(--color-white);
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-base);
+}
+
+.menu-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-xl);
+}
+
+.menu-card__image {
+  aspect-ratio: 1;
+  overflow: hidden;
+}
+
+.menu-card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.menu-card:hover .menu-card__image img {
+  transform: scale(1.05);
+}
+
+.menu-card__content {
+  padding: var(--space-6);
+}
+
+.menu-card__title {
+  font-family: var(--font-heading);
+  font-size: var(--text-lg);
+  font-weight: var(--font-semibold);
+  margin-bottom: var(--space-2);
+  color: var(--color-brown-dark);
+}
+
+.menu-card__description {
+  color: var(--color-gray-medium);
+  font-size: var(--text-sm);
+}
+
+/* --------------------------------------------------------------------------
+   Forms
+   -------------------------------------------------------------------------- */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.form-label {
+  font-family: var(--font-accent);
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  color: var(--color-brown-dark);
+}
+
+.form-label--required::after {
+  content: ' *';
+  color: #e53e3e;
+}
+
+.form-input,
+.form-textarea,
+.form-select {
+  width: 100%;
+  padding: var(--space-4);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--color-text-primary);
+  background-color: var(--color-white);
+  border: 2px solid var(--color-cream-dark);
+  border-radius: var(--border-radius-md);
+  transition: all var(--transition-fast);
+}
+
+.form-input:focus,
+.form-textarea:focus,
+.form-select:focus {
+  border-color: var(--color-gold);
+  box-shadow: 0 0 0 3px rgba(199, 166, 97, 0.2);
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+  color: var(--color-gray-light);
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.form-select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%234A2C2A' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right var(--space-4) center;
+  background-size: 20px;
+  padding-right: var(--space-12);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-6);
+}
+
+@media (min-width: 768px) {
+  .form-row--2 {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Lists
+   -------------------------------------------------------------------------- */
+.feature-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.feature-list__item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+}
+
+.feature-list__icon {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  background-color: var(--color-gold);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.feature-list__icon svg {
+  width: 14px;
+  height: 14px;
+  fill: var(--color-brown-dark);
+}
+
+.feature-list__text {
+  color: var(--color-text-primary);
+}
+
+/* Bullet List */
+.bullet-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4) var(--space-8);
+}
+
+.bullet-list__item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-size: var(--text-base);
+}
+
+.bullet-list__item::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  background-color: var(--color-gold);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Stats / Numbers
+   -------------------------------------------------------------------------- */
+.stat {
+  text-align: center;
+}
+
+.stat__number {
+  font-family: var(--font-heading);
+  font-size: var(--text-4xl);
+  font-weight: var(--font-bold);
+  color: var(--color-gold);
+  line-height: 1;
+  margin-bottom: var(--space-2);
+}
+
+.stat__label {
+  font-size: var(--text-base);
+  color: var(--color-gray-medium);
+}
+
+/* --------------------------------------------------------------------------
+   Contact Info
+   -------------------------------------------------------------------------- */
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-4);
+}
+
+.contact-item__icon {
+  width: 48px;
+  height: 48px;
+  background-color: var(--color-cream);
+  border-radius: var(--border-radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.contact-item__icon svg {
+  width: 24px;
+  height: 24px;
+  fill: var(--color-gold);
+}
+
+.contact-item__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.contact-item__label {
+  font-size: var(--text-sm);
+  color: var(--color-gray-medium);
+}
+
+.contact-item__value {
+  font-weight: var(--font-medium);
+  color: var(--color-brown-dark);
+}
+
+.contact-item__value a {
+  color: var(--color-brown-dark);
+  transition: color var(--transition-fast);
+}
+
+.contact-item__value a:hover {
+  color: var(--color-gold);
+}
+
+/* --------------------------------------------------------------------------
+   WhatsApp Floating Button
+   -------------------------------------------------------------------------- */
+.whatsapp-float {
+  position: fixed;
+  bottom: var(--space-8);
+  right: var(--space-8);
+  z-index: var(--z-fixed);
+  width: 60px;
+  height: 60px;
+  background-color: var(--color-whatsapp);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-xl);
+  transition: all var(--transition-base);
+}
+
+.whatsapp-float:hover {
+  background-color: var(--color-whatsapp-dark);
+  transform: scale(1.1);
+}
+
+.whatsapp-float svg {
+  width: 32px;
+  height: 32px;
+  fill: var(--color-white);
+}
+
+/* --------------------------------------------------------------------------
+   Image Placeholders
+   -------------------------------------------------------------------------- */
+.placeholder-image {
+  background: linear-gradient(
+    135deg,
+    var(--color-cream) 0%,
+    var(--color-gold-light) 100%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-brown-dark);
+  font-family: var(--font-accent);
+  font-size: var(--text-sm);
+  text-align: center;
+  padding: var(--space-4);
+}
+
+.placeholder-image--dark {
+  background: linear-gradient(
+    135deg,
+    var(--color-brown-dark) 0%,
+    var(--color-brown-medium) 100%
+  );
+  color: var(--color-cream);
+}

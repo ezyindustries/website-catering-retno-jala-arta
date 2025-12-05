@@ -1,0 +1,292 @@
+/* ==========================================================================
+   Layouts - Grid, Container, Sections
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Container
+   -------------------------------------------------------------------------- */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
+}
+
+.container--narrow {
+  max-width: 800px;
+}
+
+.container--wide {
+  max-width: 1400px;
+}
+
+/* --------------------------------------------------------------------------
+   Section
+   -------------------------------------------------------------------------- */
+.section {
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+}
+
+.section--sm {
+  padding-top: var(--space-12);
+  padding-bottom: var(--space-12);
+}
+
+.section--lg {
+  padding-top: var(--space-24);
+  padding-bottom: var(--space-24);
+}
+
+/* --------------------------------------------------------------------------
+   Grid System
+   -------------------------------------------------------------------------- */
+.grid {
+  display: grid;
+  gap: var(--space-8);
+}
+
+.grid--2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid--3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid--4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* Auto-fit grids */
+.grid--auto-fit {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.grid--auto-fit-sm {
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+/* Gap variations */
+.grid--gap-sm {
+  gap: var(--space-4);
+}
+
+.grid--gap-lg {
+  gap: var(--space-12);
+}
+
+/* Alignment */
+.grid--center {
+  align-items: center;
+}
+
+.grid--start {
+  align-items: start;
+}
+
+/* --------------------------------------------------------------------------
+   Flexbox Utilities
+   -------------------------------------------------------------------------- */
+.flex {
+  display: flex;
+}
+
+.flex--center {
+  align-items: center;
+  justify-content: center;
+}
+
+.flex--between {
+  justify-content: space-between;
+}
+
+.flex--column {
+  flex-direction: column;
+}
+
+.flex--wrap {
+  flex-wrap: wrap;
+}
+
+.flex--gap-sm {
+  gap: var(--space-2);
+}
+
+.flex--gap-md {
+  gap: var(--space-4);
+}
+
+.flex--gap-lg {
+  gap: var(--space-8);
+}
+
+/* --------------------------------------------------------------------------
+   Two Column Layout (Content + Image)
+   -------------------------------------------------------------------------- */
+.split-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-12);
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .split-layout {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .split-layout--reverse {
+    direction: rtl;
+  }
+
+  .split-layout--reverse > * {
+    direction: ltr;
+  }
+}
+
+.split-layout__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.split-layout__image {
+  position: relative;
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+}
+
+.split-layout__image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* --------------------------------------------------------------------------
+   Hero Layout
+   -------------------------------------------------------------------------- */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.hero--short {
+  min-height: 50vh;
+}
+
+.hero--medium {
+  min-height: 70vh;
+}
+
+.hero__background {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+}
+
+.hero__background img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(
+    135deg,
+    rgba(74, 44, 42, 0.9) 0%,
+    rgba(74, 44, 42, 0.7) 100%
+  );
+}
+
+.hero__content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: var(--color-cream);
+  padding: var(--space-8);
+  max-width: 900px;
+}
+
+/* --------------------------------------------------------------------------
+   Page Hero (for inner pages)
+   -------------------------------------------------------------------------- */
+.page-hero {
+  position: relative;
+  padding: calc(var(--header-height) + var(--space-16)) 0 var(--space-16);
+  text-align: center;
+  background-color: var(--color-brown-dark);
+  color: var(--color-cream);
+  overflow: hidden;
+}
+
+.page-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Cg fill='%23C7A661' fill-opacity='0.05'%3E%3Cellipse cx='30' cy='30' rx='12' ry='12'/%3E%3Cellipse cx='0' cy='0' rx='8' ry='8'/%3E%3Cellipse cx='60' cy='0' rx='8' ry='8'/%3E%3Cellipse cx='0' cy='60' rx='8' ry='8'/%3E%3Cellipse cx='60' cy='60' rx='8' ry='8'/%3E%3C/g%3E%3C/svg%3E");
+  pointer-events: none;
+}
+
+.page-hero__title {
+  font-size: var(--text-4xl);
+  color: var(--color-cream);
+  margin-bottom: var(--space-4);
+  position: relative;
+}
+
+.page-hero__subtitle {
+  font-size: var(--text-lg);
+  color: var(--color-gold);
+  max-width: 600px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* --------------------------------------------------------------------------
+   Spacing Utilities
+   -------------------------------------------------------------------------- */
+.mt-auto { margin-top: auto; }
+.mb-auto { margin-bottom: auto; }
+.mx-auto { margin-left: auto; margin-right: auto; }
+
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+/* --------------------------------------------------------------------------
+   Responsive Adjustments
+   -------------------------------------------------------------------------- */
+@media (max-width: 767px) {
+  .grid--2,
+  .grid--3,
+  .grid--4 {
+    grid-template-columns: 1fr;
+  }
+
+  .hide-mobile {
+    display: none !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .hide-desktop {
+    display: none !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .grid--3,
+  .grid--4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

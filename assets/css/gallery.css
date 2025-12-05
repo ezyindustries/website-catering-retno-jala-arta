@@ -1,0 +1,372 @@
+/* ==========================================================================
+   Gallery & Lightbox Styles
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Gallery Grid
+   -------------------------------------------------------------------------- */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-4);
+}
+
+@media (min-width: 768px) {
+  .gallery-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-6);
+  }
+}
+
+@media (min-width: 992px) {
+  .gallery-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Gallery Item */
+.gallery-item {
+  position: relative;
+  aspect-ratio: 1;
+  overflow: hidden;
+  border-radius: var(--border-radius-md);
+  cursor: pointer;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.gallery-item:hover img {
+  transform: scale(1.1);
+}
+
+/* Gallery Overlay */
+.gallery-item__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(74, 44, 42, 0.8) 0%,
+    transparent 50%
+  );
+  opacity: 0;
+  transition: opacity var(--transition-base);
+  display: flex;
+  align-items: flex-end;
+  padding: var(--space-4);
+}
+
+.gallery-item:hover .gallery-item__overlay {
+  opacity: 1;
+}
+
+.gallery-item__caption {
+  color: var(--color-cream);
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+}
+
+/* Gallery Zoom Icon */
+.gallery-item__zoom {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.8);
+  width: 50px;
+  height: 50px;
+  background-color: var(--color-gold);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: all var(--transition-base);
+}
+
+.gallery-item:hover .gallery-item__zoom {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.gallery-item__zoom svg {
+  width: 24px;
+  height: 24px;
+  fill: var(--color-brown-dark);
+}
+
+/* --------------------------------------------------------------------------
+   Gallery Filter Tabs
+   -------------------------------------------------------------------------- */
+.gallery-filter {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-10);
+}
+
+.gallery-filter__btn {
+  padding: var(--space-3) var(--space-6);
+  font-family: var(--font-accent);
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  color: var(--color-gray-medium);
+  background-color: var(--color-white);
+  border: 2px solid var(--color-cream-dark);
+  border-radius: var(--border-radius-full);
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+.gallery-filter__btn:hover {
+  border-color: var(--color-gold);
+  color: var(--color-gold);
+}
+
+.gallery-filter__btn.active {
+  background-color: var(--color-gold);
+  border-color: var(--color-gold);
+  color: var(--color-brown-dark);
+}
+
+/* --------------------------------------------------------------------------
+   Lightbox Modal
+   -------------------------------------------------------------------------- */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-modal);
+  background-color: rgba(0, 0, 0, 0.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-8);
+  opacity: 0;
+  visibility: hidden;
+  transition: all var(--transition-base);
+}
+
+.lightbox.is-active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.lightbox__content {
+  position: relative;
+  max-width: 90vw;
+  max-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox__image {
+  max-width: 100%;
+  max-height: 85vh;
+  object-fit: contain;
+  border-radius: var(--border-radius-md);
+  transform: scale(0.9);
+  transition: transform var(--transition-base);
+}
+
+.lightbox.is-active .lightbox__image {
+  transform: scale(1);
+}
+
+/* Lightbox Close Button */
+.lightbox__close {
+  position: absolute;
+  top: var(--space-4);
+  right: var(--space-4);
+  width: 48px;
+  height: 48px;
+  background-color: var(--color-gold);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  z-index: 10;
+}
+
+.lightbox__close:hover {
+  background-color: var(--color-gold-dark);
+  transform: rotate(90deg);
+}
+
+.lightbox__close svg {
+  width: 24px;
+  height: 24px;
+  fill: var(--color-brown-dark);
+}
+
+/* Lightbox Navigation */
+.lightbox__nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+.lightbox__nav:hover {
+  background-color: var(--color-gold);
+}
+
+.lightbox__nav svg {
+  width: 24px;
+  height: 24px;
+  fill: var(--color-cream);
+}
+
+.lightbox__nav:hover svg {
+  fill: var(--color-brown-dark);
+}
+
+.lightbox__prev {
+  left: var(--space-4);
+}
+
+.lightbox__next {
+  right: var(--space-4);
+}
+
+/* Lightbox Caption */
+.lightbox__caption {
+  position: absolute;
+  bottom: var(--space-4);
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--color-cream);
+  font-size: var(--text-sm);
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--border-radius-md);
+}
+
+/* Lightbox Counter */
+.lightbox__counter {
+  position: absolute;
+  top: var(--space-4);
+  left: var(--space-4);
+  color: var(--color-cream);
+  font-size: var(--text-sm);
+  font-family: var(--font-accent);
+}
+
+/* --------------------------------------------------------------------------
+   Masonry Layout (Alternative)
+   -------------------------------------------------------------------------- */
+.gallery-masonry {
+  columns: 2;
+  column-gap: var(--space-4);
+}
+
+@media (min-width: 768px) {
+  .gallery-masonry {
+    columns: 3;
+    column-gap: var(--space-6);
+  }
+}
+
+@media (min-width: 992px) {
+  .gallery-masonry {
+    columns: 4;
+  }
+}
+
+.gallery-masonry .gallery-item {
+  break-inside: avoid;
+  margin-bottom: var(--space-4);
+  aspect-ratio: auto;
+}
+
+@media (min-width: 768px) {
+  .gallery-masonry .gallery-item {
+    margin-bottom: var(--space-6);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Kitchen Process Gallery (Horizontal Scroll)
+   -------------------------------------------------------------------------- */
+.process-gallery {
+  display: flex;
+  gap: var(--space-6);
+  overflow-x: auto;
+  padding-bottom: var(--space-4);
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.process-gallery::-webkit-scrollbar {
+  height: 8px;
+}
+
+.process-gallery::-webkit-scrollbar-track {
+  background: var(--color-cream);
+  border-radius: var(--border-radius-full);
+}
+
+.process-gallery::-webkit-scrollbar-thumb {
+  background: var(--color-gold);
+  border-radius: var(--border-radius-full);
+}
+
+.process-item {
+  flex: 0 0 280px;
+  scroll-snap-align: start;
+}
+
+@media (min-width: 768px) {
+  .process-item {
+    flex: 0 0 320px;
+  }
+}
+
+.process-item__image {
+  aspect-ratio: 4/3;
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+  margin-bottom: var(--space-4);
+}
+
+.process-item__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.process-item__number {
+  font-family: var(--font-heading);
+  font-size: var(--text-3xl);
+  font-weight: var(--font-bold);
+  color: var(--color-gold);
+  margin-bottom: var(--space-2);
+}
+
+.process-item__title {
+  font-family: var(--font-heading);
+  font-size: var(--text-lg);
+  font-weight: var(--font-semibold);
+  color: var(--color-brown-dark);
+  margin-bottom: var(--space-2);
+}
+
+.process-item__description {
+  color: var(--color-gray-medium);
+  font-size: var(--text-sm);
+}

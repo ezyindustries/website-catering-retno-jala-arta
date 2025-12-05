@@ -1,0 +1,240 @@
+/* ==========================================================================
+   Batik Patterns & Javanese Ornaments
+   Theme: Tradisional Jawa Elegan Modern
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Batik Kawung Pattern - Subtle Embossed Background
+   -------------------------------------------------------------------------- */
+.bg-batik-kawung {
+  position: relative;
+  background-color: var(--color-cream);
+}
+
+.bg-batik-kawung::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Cg fill='%234A2C2A' fill-opacity='0.03'%3E%3Cellipse cx='30' cy='30' rx='12' ry='12'/%3E%3Cellipse cx='0' cy='0' rx='8' ry='8'/%3E%3Cellipse cx='60' cy='0' rx='8' ry='8'/%3E%3Cellipse cx='0' cy='60' rx='8' ry='8'/%3E%3Cellipse cx='60' cy='60' rx='8' ry='8'/%3E%3C/g%3E%3C/svg%3E");
+  background-repeat: repeat;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.bg-batik-kawung > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* --------------------------------------------------------------------------
+   Batik Parang Pattern - Diagonal Lines
+   -------------------------------------------------------------------------- */
+.bg-batik-parang {
+  position: relative;
+  background-color: var(--color-cream-light);
+}
+
+.bg-batik-parang::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cpath d='M0 40L40 0H30L0 30M40 40V30L10 40M40 10V0H30' fill='%234A2C2A' fill-opacity='0.02'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.bg-batik-parang > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* --------------------------------------------------------------------------
+   Dark Background with Pattern
+   -------------------------------------------------------------------------- */
+.bg-dark-pattern {
+  position: relative;
+  background-color: var(--color-brown-dark);
+  color: var(--color-cream);
+}
+
+.bg-dark-pattern::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Cg fill='%23C7A661' fill-opacity='0.05'%3E%3Cellipse cx='30' cy='30' rx='12' ry='12'/%3E%3Cellipse cx='0' cy='0' rx='8' ry='8'/%3E%3Cellipse cx='60' cy='0' rx='8' ry='8'/%3E%3Cellipse cx='0' cy='60' rx='8' ry='8'/%3E%3Cellipse cx='60' cy='60' rx='8' ry='8'/%3E%3C/g%3E%3C/svg%3E");
+  background-repeat: repeat;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.bg-dark-pattern > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* --------------------------------------------------------------------------
+   Ornament Divider - Javanese Style
+   -------------------------------------------------------------------------- */
+.ornament-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-4);
+  margin: var(--space-8) auto;
+  max-width: 300px;
+}
+
+.ornament-divider::before,
+.ornament-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--color-gold) 50%,
+    transparent 100%
+  );
+}
+
+.ornament-divider__icon {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ornament-divider__icon svg {
+  width: 100%;
+  height: 100%;
+  fill: var(--color-gold);
+}
+
+/* Diamond ornament (default) */
+.ornament-divider__diamond {
+  width: 12px;
+  height: 12px;
+  background-color: var(--color-gold);
+  transform: rotate(45deg);
+}
+
+/* --------------------------------------------------------------------------
+   Section Divider with Batik Motif
+   -------------------------------------------------------------------------- */
+.section-divider {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: var(--space-12) 0;
+  position: relative;
+}
+
+.section-divider::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--color-gold-light) 20%,
+    var(--color-gold) 50%,
+    var(--color-gold-light) 80%,
+    transparent 100%
+  );
+}
+
+.section-divider__ornament {
+  position: relative;
+  z-index: 1;
+  background-color: var(--color-cream-light);
+  padding: 0 var(--space-6);
+  display: flex;
+  gap: var(--space-2);
+}
+
+.section-divider__ornament span {
+  width: 8px;
+  height: 8px;
+  background-color: var(--color-gold);
+  transform: rotate(45deg);
+}
+
+.section-divider__ornament span:nth-child(2) {
+  width: 12px;
+  height: 12px;
+}
+
+/* --------------------------------------------------------------------------
+   Gold Accent Border
+   -------------------------------------------------------------------------- */
+.gold-border-top {
+  border-top: 3px solid var(--color-gold);
+}
+
+.gold-border-bottom {
+  border-bottom: 3px solid var(--color-gold);
+}
+
+.gold-border-left {
+  border-left: 3px solid var(--color-gold);
+}
+
+/* --------------------------------------------------------------------------
+   Decorative Corner Ornaments
+   -------------------------------------------------------------------------- */
+.corner-ornament {
+  position: relative;
+}
+
+.corner-ornament::before,
+.corner-ornament::after {
+  content: '';
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border-color: var(--color-gold);
+  border-style: solid;
+  border-width: 0;
+  opacity: 0.5;
+}
+
+.corner-ornament::before {
+  top: 0;
+  left: 0;
+  border-top-width: 2px;
+  border-left-width: 2px;
+}
+
+.corner-ornament::after {
+  bottom: 0;
+  right: 0;
+  border-bottom-width: 2px;
+  border-right-width: 2px;
+}
+
+/* --------------------------------------------------------------------------
+   Background Variations
+   -------------------------------------------------------------------------- */
+.bg-cream {
+  background-color: var(--color-cream);
+}
+
+.bg-cream-light {
+  background-color: var(--color-cream-light);
+}
+
+.bg-brown-dark {
+  background-color: var(--color-brown-dark);
+  color: var(--color-cream);
+}
+
+.bg-gold-subtle {
+  background-color: rgba(199, 166, 97, 0.1);
+}

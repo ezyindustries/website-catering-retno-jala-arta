@@ -1,0 +1,118 @@
+/* ==========================================================================
+   CSS Variables - CV Retno Jala Arta
+   Theme: Tradisional Jawa Elegan Modern
+   ========================================================================== */
+
+:root {
+  /* Primary Colors - Javanese Elegant Theme */
+  --color-brown-dark: #4A2C2A;
+  --color-brown-medium: #6B4423;
+  --color-brown-light: #8B6914;
+  --color-cream: #F2E6D8;
+  --color-cream-light: #FAF6F1;
+  --color-cream-dark: #E8D9C8;
+  --color-gold: #C7A661;
+  --color-gold-dark: #A88B4A;
+  --color-gold-light: #D4BC82;
+
+  /* Neutral Colors */
+  --color-white: #FFFFFF;
+  --color-black: #1A1A1A;
+  --color-gray-dark: #333333;
+  --color-gray-medium: #666666;
+  --color-gray-light: #999999;
+
+  /* Semantic Colors */
+  --color-text-primary: var(--color-brown-dark);
+  --color-text-secondary: var(--color-gray-medium);
+  --color-text-light: var(--color-cream);
+  --color-background-primary: var(--color-cream-light);
+  --color-background-secondary: var(--color-cream);
+  --color-background-dark: var(--color-brown-dark);
+  --color-accent: var(--color-gold);
+
+  /* WhatsApp Green */
+  --color-whatsapp: #25D366;
+  --color-whatsapp-dark: #128C7E;
+
+  /* Typography */
+  --font-heading: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --font-body: 'Lora', Georgia, 'Times New Roman', serif;
+  --font-accent: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  /* Font Sizes - Fluid Typography */
+  --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+  --text-sm: clamp(0.875rem, 0.8rem + 0.375vw, 1rem);
+  --text-base: clamp(1rem, 0.925rem + 0.375vw, 1.125rem);
+  --text-lg: clamp(1.125rem, 1rem + 0.625vw, 1.25rem);
+  --text-xl: clamp(1.25rem, 1.1rem + 0.75vw, 1.5rem);
+  --text-2xl: clamp(1.5rem, 1.25rem + 1.25vw, 2rem);
+  --text-3xl: clamp(1.875rem, 1.5rem + 1.875vw, 2.5rem);
+  --text-4xl: clamp(2.25rem, 1.75rem + 2.5vw, 3.5rem);
+  --text-5xl: clamp(2.75rem, 2rem + 3.75vw, 4.5rem);
+
+  /* Font Weights */
+  --font-normal: 400;
+  --font-medium: 500;
+  --font-semibold: 600;
+  --font-bold: 700;
+
+  /* Line Heights */
+  --leading-tight: 1.2;
+  --leading-snug: 1.375;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.625;
+  --leading-loose: 2;
+
+  /* Spacing Scale */
+  --space-1: 0.25rem;   /* 4px */
+  --space-2: 0.5rem;    /* 8px */
+  --space-3: 0.75rem;   /* 12px */
+  --space-4: 1rem;      /* 16px */
+  --space-5: 1.25rem;   /* 20px */
+  --space-6: 1.5rem;    /* 24px */
+  --space-8: 2rem;      /* 32px */
+  --space-10: 2.5rem;   /* 40px */
+  --space-12: 3rem;     /* 48px */
+  --space-16: 4rem;     /* 64px */
+  --space-20: 5rem;     /* 80px */
+  --space-24: 6rem;     /* 96px */
+  --space-32: 8rem;     /* 128px */
+
+  /* Layout */
+  --container-max: 1200px;
+  --container-padding: clamp(1rem, 5vw, 2rem);
+  --section-padding: clamp(3rem, 8vw, 6rem);
+
+  /* Header */
+  --header-height: 80px;
+  --header-height-scrolled: 70px;
+
+  /* Borders */
+  --border-radius-sm: 4px;
+  --border-radius-md: 8px;
+  --border-radius-lg: 12px;
+  --border-radius-xl: 16px;
+  --border-radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(74, 44, 42, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(74, 44, 42, 0.1), 0 2px 4px -1px rgba(74, 44, 42, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(74, 44, 42, 0.1), 0 4px 6px -2px rgba(74, 44, 42, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(74, 44, 42, 0.1), 0 10px 10px -5px rgba(74, 44, 42, 0.04);
+  --shadow-2xl: 0 25px 50px -12px rgba(74, 44, 42, 0.25);
+
+  /* Transitions */
+  --transition-fast: 150ms ease;
+  --transition-base: 300ms ease;
+  --transition-slow: 500ms ease;
+  --transition-slower: 700ms ease;
+
+  /* Z-index Scale */
+  --z-dropdown: 100;
+  --z-sticky: 200;
+  --z-fixed: 300;
+  --z-modal-backdrop: 400;
+  --z-modal: 500;
+  --z-tooltip: 600;
+}

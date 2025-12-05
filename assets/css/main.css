@@ -1,0 +1,158 @@
+/* ==========================================================================
+   Main CSS - CV Retno Jala Arta Website
+   Theme: Tradisional Jawa Elegan Modern
+   ========================================================================== */
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lora:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+
+/* Import CSS Files */
+@import 'variables.css';
+@import 'reset.css';
+@import 'patterns.css';
+@import 'layouts.css';
+@import 'components.css';
+@import 'header-footer.css';
+@import 'animations.css';
+@import 'gallery.css';
+@import 'responsive.css';
+
+/* ==========================================================================
+   Additional Base Styles
+   ========================================================================== */
+
+/* Smooth scrolling with offset for fixed header */
+html {
+  scroll-padding-top: var(--header-height);
+}
+
+/* Main content wrapper */
+main {
+  min-height: 100vh;
+}
+
+/* Page wrapper for animation */
+.page {
+  opacity: 0;
+  animation: pageIn 0.5s ease forwards;
+}
+
+/* Link styles */
+a {
+  color: var(--color-gold);
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--color-gold-dark);
+}
+
+/* Strong text */
+strong, b {
+  font-weight: var(--font-semibold);
+}
+
+/* Emphasized text */
+em, i {
+  font-style: italic;
+}
+
+/* Paragraph spacing */
+p + p {
+  margin-top: var(--space-4);
+}
+
+/* Section title styling */
+.section__header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto var(--space-12);
+}
+
+.section__label {
+  display: block;
+  margin-bottom: var(--space-4);
+}
+
+.section__title {
+  margin-bottom: var(--space-4);
+}
+
+.section__subtitle {
+  color: var(--color-gray-medium);
+}
+
+/* Focus visible for accessibility */
+:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 2px;
+}
+
+/* Skip to content link */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: var(--space-4);
+  background-color: var(--color-gold);
+  color: var(--color-brown-dark);
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--border-radius-md);
+  z-index: 9999;
+  transition: top var(--transition-fast);
+}
+
+.skip-link:focus {
+  top: var(--space-4);
+}
+
+/* ==========================================================================
+   Utility Classes
+   ========================================================================== */
+
+/* Visually hidden but accessible */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Text colors */
+.text-gold { color: var(--color-gold); }
+.text-brown { color: var(--color-brown-dark); }
+.text-cream { color: var(--color-cream); }
+.text-muted { color: var(--color-gray-medium); }
+
+/* Background colors */
+.bg-cream { background-color: var(--color-cream); }
+.bg-cream-light { background-color: var(--color-cream-light); }
+.bg-brown { background-color: var(--color-brown-dark); }
+.bg-white { background-color: var(--color-white); }
+
+/* Margins */
+.mb-0 { margin-bottom: 0 !important; }
+.mb-4 { margin-bottom: var(--space-4); }
+.mb-6 { margin-bottom: var(--space-6); }
+.mb-8 { margin-bottom: var(--space-8); }
+.mb-12 { margin-bottom: var(--space-12); }
+
+.mt-0 { margin-top: 0 !important; }
+.mt-4 { margin-top: var(--space-4); }
+.mt-8 { margin-top: var(--space-8); }
+.mt-12 { margin-top: var(--space-12); }
+
+/* Padding */
+.p-0 { padding: 0 !important; }
+.p-4 { padding: var(--space-4); }
+.p-8 { padding: var(--space-8); }
+
+/* Width */
+.w-full { width: 100%; }
+.max-w-sm { max-width: 400px; }
+.max-w-md { max-width: 600px; }
+.max-w-lg { max-width: 800px; }

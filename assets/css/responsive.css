@@ -1,0 +1,383 @@
+/* ==========================================================================
+   Responsive Styles - Mobile First
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Mobile Base (default styles in other files)
+   -------------------------------------------------------------------------- */
+
+/* --------------------------------------------------------------------------
+   Small Devices (landscape phones, 576px and up)
+   -------------------------------------------------------------------------- */
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Medium Devices (tablets, 768px and up)
+   -------------------------------------------------------------------------- */
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+
+  /* Header */
+  .header__nav {
+    display: flex;
+  }
+
+  .header__toggle {
+    display: none;
+  }
+
+  /* Hero */
+  .hero__content {
+    padding: var(--space-12);
+  }
+
+  /* Page Hero */
+  .page-hero {
+    padding: calc(var(--header-height) + var(--space-20)) 0 var(--space-20);
+  }
+
+  /* Grid adjustments */
+  .grid--2-md {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Footer */
+  .footer__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Form */
+  .form-row--2 {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Large Devices (desktops, 992px and up)
+   -------------------------------------------------------------------------- */
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+
+  /* Grid adjustments */
+  .grid--3-lg {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* Footer */
+  .footer__grid {
+    grid-template-columns: 2fr repeat(3, 1fr);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Extra Large Devices (large desktops, 1200px and up)
+   -------------------------------------------------------------------------- */
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+
+  /* Grid adjustments */
+  .grid--4-xl {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Mobile Navigation Styles
+   -------------------------------------------------------------------------- */
+@media (max-width: 767px) {
+  /* Mobile menu */
+  .header__nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    max-width: 320px;
+    height: 100vh;
+    background-color: var(--color-brown-dark);
+    padding: var(--space-20) var(--space-8) var(--space-8);
+    transition: right var(--transition-base);
+    z-index: var(--z-modal);
+    overflow-y: auto;
+  }
+
+  .header__nav.is-open {
+    right: 0;
+  }
+
+  .nav__list {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .nav__link {
+    display: block;
+    padding: var(--space-4) 0;
+    color: var(--color-cream);
+    font-size: var(--text-lg);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .nav__link:hover,
+  .nav__link.active {
+    color: var(--color-gold);
+  }
+
+  /* Mobile menu overlay */
+  .nav-overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: var(--z-modal-backdrop);
+    opacity: 0;
+    visibility: hidden;
+    transition: all var(--transition-base);
+  }
+
+  .nav-overlay.is-visible {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* Header CTA hidden on mobile */
+  .header__cta {
+    display: none;
+  }
+
+  /* Hamburger menu */
+  .header__toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 30px;
+    height: 30px;
+    z-index: calc(var(--z-modal) + 1);
+  }
+
+  .header__toggle span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: var(--color-brown-dark);
+    transition: all var(--transition-base);
+  }
+
+  .header--scrolled .header__toggle span,
+  .header__toggle.is-active span {
+    background-color: var(--color-brown-dark);
+  }
+
+  .header__toggle.is-active span {
+    background-color: var(--color-cream);
+  }
+
+  .header__toggle.is-active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  .header__toggle.is-active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .header__toggle.is-active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+
+  /* Prevent body scroll when menu is open */
+  body.nav-open {
+    overflow: hidden;
+  }
+
+  /* Hero adjustments */
+  .hero {
+    min-height: 100svh;
+  }
+
+  .hero__title {
+    font-size: var(--text-3xl);
+  }
+
+  .hero__buttons {
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+
+  .hero__buttons .btn {
+    width: 100%;
+  }
+
+  /* Section adjustments */
+  .section {
+    padding-top: var(--space-12);
+    padding-bottom: var(--space-12);
+  }
+
+  /* Card adjustments */
+  .value-card {
+    padding: var(--space-6);
+  }
+
+  .service-card {
+    padding: var(--space-6);
+  }
+
+  /* Stats */
+  .stat__number {
+    font-size: var(--text-3xl);
+  }
+
+  /* WhatsApp float */
+  .whatsapp-float {
+    bottom: var(--space-6);
+    right: var(--space-6);
+    width: 56px;
+    height: 56px;
+  }
+
+  .whatsapp-float svg {
+    width: 28px;
+    height: 28px;
+  }
+
+  /* Gallery grid */
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-4);
+  }
+
+  /* Contact info */
+  .contact-info {
+    flex-direction: column;
+    gap: var(--space-6);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Touch Device Optimizations
+   -------------------------------------------------------------------------- */
+@media (hover: none) and (pointer: coarse) {
+  /* Remove hover effects on touch devices */
+  .card:hover,
+  .service-card:hover,
+  .menu-card:hover {
+    transform: none;
+  }
+
+  .btn:hover {
+    transform: none;
+  }
+
+  /* Increase touch targets */
+  .btn {
+    min-height: 48px;
+  }
+
+  .nav__link {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Print Styles
+   -------------------------------------------------------------------------- */
+@media print {
+  .header,
+  .footer,
+  .whatsapp-float,
+  .btn {
+    display: none !important;
+  }
+
+  .hero {
+    min-height: auto;
+    padding: var(--space-8);
+  }
+
+  .hero__overlay {
+    background: none;
+  }
+
+  .hero__content {
+    color: var(--color-brown-dark);
+  }
+
+  .section {
+    padding: var(--space-6);
+  }
+
+  body {
+    font-size: 12pt;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Landscape Mode Adjustments
+   -------------------------------------------------------------------------- */
+@media (max-height: 500px) and (orientation: landscape) {
+  .hero {
+    min-height: auto;
+    padding: var(--space-16) 0;
+  }
+
+  .hero__content {
+    padding: var(--space-4);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   High Resolution Displays
+   -------------------------------------------------------------------------- */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  /* Ensure crisp borders */
+  .card,
+  .service-card,
+  .form-input,
+  .form-textarea,
+  .form-select {
+    border-width: 1px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Dark Mode Support (Optional)
+   -------------------------------------------------------------------------- */
+@media (prefers-color-scheme: dark) {
+  /* Dark mode can be implemented here if needed */
+  /* Currently keeping light mode as per brand guidelines */
+}
+
+/* --------------------------------------------------------------------------
+   Reduced Motion
+   -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  [data-animate] {
+    opacity: 1;
+    transform: none;
+  }
+
+  .hero__content > * {
+    animation: none;
+    opacity: 1;
+  }
+}
