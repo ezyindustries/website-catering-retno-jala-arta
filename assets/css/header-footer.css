@@ -82,12 +82,26 @@
 }
 
 .header__logo img {
-  height: 50px;
+  height: 55px;
   width: auto;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  background-color: #ffffff;
+  padding: 8px 16px;
+  border: 2px solid var(--color-gold);
+  transition: all var(--transition-base);
+}
+
+.header__logo img:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  transform: translateY(-2px);
+  border-color: var(--color-gold-dark);
 }
 
 .header--scrolled .header__logo img {
-  height: 45px;
+  height: 50px;
+  padding: 6px 12px;
+  border-radius: 12px;
 }
 
 .header__logo-text {
